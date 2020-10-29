@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.math.BigInteger;
 
+// TODO: Add microbenchmark
 public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
 
