@@ -22,9 +22,3 @@ Refrences:
 Additional links to conference presentation or popular education videos: 
 
 <a href="https://www.youtube.com/watch?v=t0dGLFtRR9c">Вторая половина доклада Шипилева про внутренности ForkJoinPool</a>
-
-## Task
-
-Factorial via FJP
-
-Use FJP to calculate factorial. Compare with the sequential implementation. Use BigInteger to keep val
