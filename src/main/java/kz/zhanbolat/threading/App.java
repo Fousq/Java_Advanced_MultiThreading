@@ -3,12 +3,31 @@
  */
 package kz.zhanbolat.threading;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.concurrent.ForkJoinPool;
+
+// TODO: Add progress bar
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+    private static final Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        ForkJoinPool pool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String line = "";
+        try {
+            System.out.print("Enter the path: ");
+            line = reader.readLine();
+        } catch (IOException e) {
+            logger.error(e);
+        }
+        ScanResult result = pool.invoke(new FileScanningTask(line));
+        logger.info("Result of scanning:\nFile count: " + result.getFileCount()
+                + "\nFolder count: " + result.getFolderCount()
+                + "\nFiles size: " + result.getSize() + " bytes");
     }
 }
