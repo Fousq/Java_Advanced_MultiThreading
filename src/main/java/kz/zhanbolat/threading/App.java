@@ -3,15 +3,17 @@
  */
 package kz.zhanbolat.threading;
 
+import me.tongfei.progressbar.ProgressBar;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.concurrent.ForkJoinPool;
 
-// TODO: Add progress bar
 public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
 
@@ -25,7 +27,9 @@ public class App {
         } catch (IOException e) {
             logger.error(e);
         }
-        ScanResult result = pool.invoke(new FileScanningTask(line));
+        File directory = new File(line);
+        ProgressBar progressBar = new ProgressBar("File scanning", FileUtils.sizeOfDirectory(directory));
+        ScanResult result = pool.invoke(new FileScanningTask(directory, progressBar));
         logger.info("Result of scanning:\nFile count: " + result.getFileCount()
                 + "\nFolder count: " + result.getFolderCount()
                 + "\nFiles size: " + result.getSize() + " bytes");

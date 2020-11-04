@@ -23,14 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2c7bf1a-4112-4146-8ce8-25b2ef763919" name="Default Changelist" comment="Add log4j2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/FileScanningTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/ScanResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/FileScanningTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/FileScanningTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="task_2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,6 +108,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -149,26 +148,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add log4j2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1604031967076">
+    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1604508449324">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604031967076" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1604033887806">
+    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604508449324" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1604508829262">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604033887806" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1604033887806">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604508829262" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1604508829261">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604033887806" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1604033887806">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604508829261" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1604508829261">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604033887806" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1604033887806">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604508829261" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1604508829261">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604033887806" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604508829261" />
     <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1603952208561">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
