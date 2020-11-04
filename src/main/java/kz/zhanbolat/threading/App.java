@@ -3,12 +3,32 @@
  */
 package kz.zhanbolat.threading;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+    private static final Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        ForkJoinPool pool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
+        List<Integer> unsortedList = generateUnsortedList(100);
+        logger.info("Unsorted list: " + unsortedList);
+        List<Integer> list = pool.invoke(new MergeSortingTask(generateUnsortedList(100)));
+        logger.info("Sorted List: " + list);
+    }
+
+    private static List<Integer> generateUnsortedList(int n) {
+        List<Integer> list = new ArrayList<>(n);
+        Random random = new Random(13);
+        while(n >= 1) {
+            list.add(random.nextInt(100));
+            n--;
+        }
+        return list;
     }
 }
