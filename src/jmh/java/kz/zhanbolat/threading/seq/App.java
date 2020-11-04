@@ -8,15 +8,13 @@ import org.apache.logging.log4j.Logger;
 
 import java.math.BigInteger;
 
+// TODO: Add microbenchmark
 public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
         FactorialCalculator calculator = new FactorialCalculator();
         BigInteger factorial = calculator.calculateFactorial(100);
         logger.info("Factorial of 100 is " + factorial);
-        long endTime = System.currentTimeMillis();
-        logger.info("Take " + (endTime - startTime) + " ms to complete the calculation");
     }
 }
