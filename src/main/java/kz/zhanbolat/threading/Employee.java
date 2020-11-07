@@ -10,6 +10,11 @@ public class Employee {
         this.id = id;
     }
 
+    public Employee(int id, Double salary) {
+        this.id = id;
+        this.salary = salary;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -31,8 +36,8 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return id == employee.id &&
-                Double.compare(employee.salary, salary) == 0;
+        return Objects.equals(id, employee.id) &&
+                Objects.equals(salary, employee.salary);
     }
 
     @Override

@@ -9,34 +9,44 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
+    private static final int EMPLOYEE_MAX_SIZE = 1_000;
     private static Map<Integer, Double> employeeIdToSalaryMap = new HashMap<>();
     private static Random random = new Random(13);
 
-    // TODO: Ask about special operation on CF
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
         init();
-        CompletableFuture<List<Employee>> listCompletableFuture = CompletableFuture.supplyAsync(App::hiredEmployees)
-                .thenApplyAsync(employees -> employees.stream().peek(employee -> employee.setSalary(getSalary(employee.getId()))).collect(Collectors.toList()));
-        logger.info(listCompletableFuture.get());
+        long startTime = System.currentTimeMillis();
+        hiredEmployees().thenCompose(employees -> {
+            List<CompletionStage<Employee>> updateEmployees = employees.stream().map(employee -> getSalary(employee.getId())
+                    .thenApplyAsync(salary -> {
+                        employee.setSalary(salary);
+                        return employee;
+                    })).collect(Collectors.toList());
+
+            CompletableFuture<Void> done = CompletableFuture.allOf(updateEmployees.toArray(new CompletableFuture[0]));
+            return done.thenApply(v -> updateEmployees.stream().map(CompletionStage::toCompletableFuture).map(CompletableFuture::join).collect(Collectors.toList()));
+        }).whenComplete((employees, throwable) -> employees.forEach(logger::info)).toCompletableFuture().join();
+        long endTime = System.currentTimeMillis();
+        logger.info("Async: " + (endTime - startTime));
     }
 
     private static void init() {
-        IntStream.range(1, 10).forEach(id -> employeeIdToSalaryMap.put(id, random.nextDouble()));
+        IntStream.range(1, EMPLOYEE_MAX_SIZE).forEach(id -> employeeIdToSalaryMap.put(id, random.nextDouble()));
     }
 
-    private static List<Employee> hiredEmployees() {
+    private static CompletionStage<List<Employee>> hiredEmployees() {
         List<Employee> employees = new ArrayList<>();
-        IntStream.range(1, 10).forEach(id -> employees.add(new Employee(id)));
-        return employees;
+        IntStream.range(1, EMPLOYEE_MAX_SIZE).forEach(id -> employees.add(new Employee(id)));
+        return CompletableFuture.supplyAsync(() -> employees);
     }
 
-    private static double getSalary(int hiredEmployeeId) {
-        return Optional.ofNullable(employeeIdToSalaryMap.get(hiredEmployeeId)).orElse(0d);
+    private static CompletionStage<Double> getSalary(int hiredEmployeeId) {
+        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(employeeIdToSalaryMap.get(hiredEmployeeId)).orElse(0d));
     }
+
 }
