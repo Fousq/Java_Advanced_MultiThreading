@@ -3,12 +3,25 @@
  */
 package kz.zhanbolat.threading;
 
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
+import akka.actor.SupervisorStrategy;
+import akka.routing.RoundRobinPool;
+import kz.zhanbolat.threading.actor.PCAssemblyWorker;
+import kz.zhanbolat.threading.entity.Motherboard;
+import kz.zhanbolat.threading.service.PCAssemblyService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+    private static final Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        ActorSystem actorSystem = ActorSystem.create("PC_assembly");
+        ActorRef router = actorSystem.actorOf(new RoundRobinPool(5).withSupervisorStrategy(SupervisorStrategy.defaultStrategy())
+                .props(Props.create(PCAssemblyWorker.class)), "router");
+        PCAssemblyService service = new PCAssemblyService(router);
+        logger.info(service.assemble(new Motherboard("ASRock", "P8Z77", "Z77")));
     }
 }

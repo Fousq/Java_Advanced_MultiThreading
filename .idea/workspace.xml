@@ -23,15 +23,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2c7bf1a-4112-4146-8ce8-25b2ef763919" name="Default Changelist" comment="Add log4j2">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/actor/CPUInstallingActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/actor/CoolerInstallingActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/actor/GraphicsCardInstallingActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/actor/HardDriveInstallingActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/actor/PCAssemblyWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/CPU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/Cooler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/GraphicsCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/HardDrive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/Motherboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/PC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/entity/PCDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/CPUAssemblyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/CoolerAssemblyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/GraphicsCardAssemblyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/HardDriveAssemblyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/PCAssemblyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/service/PSUAssemblyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Java_Advanced_MultiThreading.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kz/zhanbolat/threading/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +63,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -53,12 +73,32 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Java_Advanced_MultiThreading" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java_Advanced_MultiThreading" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java_Advanced_MultiThreading" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -84,8 +124,28 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/visualvm_204/bin/visualvm.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe.akka/akka-actor_2.13/2.6.10/1b1c0017c282026478125aaa160a2272f081d0d4/akka-actor_2.13-2.6.10-sources.jar" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kz.zhanbolat.threading.App" />
+      <module name="Java_Advanced_MultiThreading.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kz.zhanbolat.threading.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,15 +176,56 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add log4j2" />
     <option name="LAST_COMMIT_MESSAGE" value="Add log4j2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="765" y="286" key="#com.intellij.ide.util.MemberChooser" timestamp="1604848069895">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="765" y="286" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604848069895" />
+    <state x="740" y="321" key="FileChooserDialogImpl" timestamp="1604837165008">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="740" y="321" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604837165008" />
+    <state width="1877" height="322" key="GridCell.Tab.0.bottom" timestamp="1604849268365">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="322" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604849268365" />
+    <state width="1877" height="322" key="GridCell.Tab.0.center" timestamp="1604849268364">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="322" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604849268364" />
+    <state width="1877" height="322" key="GridCell.Tab.0.left" timestamp="1604849268364">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="322" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604849268364" />
+    <state width="1877" height="322" key="GridCell.Tab.0.right" timestamp="1604849268365">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="322" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604849268365" />
     <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1603952208561">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1603952208561" />
+    <state x="2277" y="-18" width="1201" height="1127" maximized="true" key="dock-window-1" timestamp="1604823847320">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2277" y="-18" width="1201" height="1127" maximized="true" key="dock-window-1/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604823847320" />
+    <state x="667" y="313" width="585" height="534" key="find.popup" timestamp="1604835485043">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="667" y="313" width="585" height="534" key="find.popup/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604835485043" />
+    <state x="660" y="337" key="refactoring.ChangeSignatureDialog" timestamp="1604827824417">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="660" y="337" key="refactoring.ChangeSignatureDialog/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604827824417" />
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1604847683067">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1920.1040@0.0.1920.1160" timestamp="1604847683067" />
   </component>
 </project>
