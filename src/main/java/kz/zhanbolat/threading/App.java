@@ -3,12 +3,50 @@
  */
 package kz.zhanbolat.threading;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+    private static final Logger logger = LogManager.getLogger(App.class);
+    private static final int EMPLOYEE_MAX_SIZE = 1_000;
+    private static Map<Integer, Double> employeeIdToSalaryMap = new HashMap<>();
+    private static Random random = new Random(13);
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        init();
+        long startTime = System.currentTimeMillis();
+        hiredEmployees().thenCompose(employees -> {
+            List<CompletionStage<Employee>> updateEmployees = employees.stream().map(employee -> getSalary(employee.getId())
+                    .thenApplyAsync(salary -> {
+                        employee.setSalary(salary);
+                        return employee;
+                    })).collect(Collectors.toList());
+
+            CompletableFuture<Void> done = CompletableFuture.allOf(updateEmployees.toArray(new CompletableFuture[0]));
+            return done.thenApply(v -> updateEmployees.stream().map(CompletionStage::toCompletableFuture).map(CompletableFuture::join).collect(Collectors.toList()));
+        }).whenComplete((employees, throwable) -> employees.forEach(logger::info)).toCompletableFuture().join();
+        long endTime = System.currentTimeMillis();
+        logger.info("Async: " + (endTime - startTime));
     }
+
+    private static void init() {
+        IntStream.range(1, EMPLOYEE_MAX_SIZE).forEach(id -> employeeIdToSalaryMap.put(id, random.nextDouble()));
+    }
+
+    private static CompletionStage<List<Employee>> hiredEmployees() {
+        List<Employee> employees = new ArrayList<>();
+        IntStream.range(1, EMPLOYEE_MAX_SIZE).forEach(id -> employees.add(new Employee(id)));
+        return CompletableFuture.supplyAsync(() -> employees);
+    }
+
+    private static CompletionStage<Double> getSalary(int hiredEmployeeId) {
+        return CompletableFuture.supplyAsync(() -> Optional.ofNullable(employeeIdToSalaryMap.get(hiredEmployeeId)).orElse(0d));
+    }
+
 }
